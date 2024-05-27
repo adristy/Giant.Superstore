@@ -1,0 +1,362 @@
+[
+    {
+        "Year": 2014,
+        "Month": 1,
+        "Profit": "333,6157",
+        "Predicted": "194,5313089"
+    },
+    {
+        "Year": 2014,
+        "Month": 2,
+        "Profit": "130,8819",
+        "Predicted": "150,2802635"
+    },
+    {
+        "Year": 2014,
+        "Month": 3,
+        "Profit": "392,9125",
+        "Predicted": "400,4301539"
+    },
+    {
+        "Year": 2014,
+        "Month": 4,
+        "Profit": "531,6469",
+        "Predicted": "350,919295"
+    },
+    {
+        "Year": 2014,
+        "Month": 5,
+        "Profit": "411,2374",
+        "Predicted": "440,9331955"
+    },
+    {
+        "Year": 2014,
+        "Month": 6,
+        "Profit": "414,0231",
+        "Predicted": "440,5161172"
+    },
+    {
+        "Year": 2014,
+        "Month": 7,
+        "Profit": 314948,
+        "Predicted": "296,4814119"
+    },
+    {
+        "Year": 2014,
+        "Month": 8,
+        "Profit": "558,0252",
+        "Predicted": "429,1956608"
+    },
+    {
+        "Year": 2014,
+        "Month": 9,
+        "Profit": "994,8439",
+        "Predicted": "958,8054664"
+    },
+    {
+        "Year": 2014,
+        "Month": 10,
+        "Profit": 328594,
+        "Predicted": "438,1792445"
+    },
+    {
+        "Year": 2014,
+        "Month": 11,
+        "Profit": "1131,2424",
+        "Predicted": "919,0038307"
+    },
+    {
+        "Year": 2014,
+        "Month": 12,
+        "Profit": "585,9376",
+        "Predicted": "783,376404"
+    },
+    {
+        "Year": 2015,
+        "Month": 1,
+        "Profit": "233,0905",
+        "Predicted": "248,4100875"
+    },
+    {
+        "Year": 2015,
+        "Month": 2,
+        "Profit": "177,0128",
+        "Predicted": "190,9639532"
+    },
+    {
+        "Year": 2015,
+        "Month": 3,
+        "Profit": "454,1478",
+        "Predicted": "506,4424894"
+    },
+    {
+        "Year": 2015,
+        "Month": 4,
+        "Profit": "390,8583",
+        "Predicted": "441,8183901"
+    },
+    {
+        "Year": 2015,
+        "Month": 5,
+        "Profit": "479,2276",
+        "Predicted": "552,7353565"
+    },
+    {
+        "Year": 2015,
+        "Month": 6,
+        "Profit": "477,7233",
+        "Predicted": "549,9012348"
+    },
+    {
+        "Year": 2015,
+        "Month": 7,
+        "Profit": "286,0347",
+        "Predicted": "368,6085893"
+    },
+    {
+        "Year": 2015,
+        "Month": 8,
+        "Profit": "476,3804",
+        "Predicted": "531,5344683"
+    },
+    {
+        "Year": 2015,
+        "Month": 9,
+        "Profit": "889,8743",
+        "Predicted": "1182,971908"
+    },
+    {
+        "Year": 2015,
+        "Month": 10,
+        "Profit": "478,1015",
+        "Predicted": "538,6667009"
+    },
+    {
+        "Year": 2015,
+        "Month": 11,
+        "Profit": 944086,
+        "Predicted": "1125,806419"
+    },
+    {
+        "Year": 2015,
+        "Month": 12,
+        "Profit": "998,4708",
+        "Predicted": "956,4140026"
+    },
+    {
+        "Year": 2016,
+        "Month": 1,
+        "Profit": "386,6823",
+        "Predicted": "302,2888661"
+    },
+    {
+        "Year": 2016,
+        "Month": 2,
+        "Profit": "257,8441",
+        "Predicted": "231,647643"
+    },
+    {
+        "Year": 2016,
+        "Month": 3,
+        "Profit": "481,9321",
+        "Predicted": "612,454825"
+    },
+    {
+        "Year": 2016,
+        "Month": 4,
+        "Profit": "540,8715",
+        "Predicted": "532,7174851"
+    },
+    {
+        "Year": 2016,
+        "Month": 5,
+        "Profit": "627,2376",
+        "Predicted": "664,5375174"
+    },
+    {
+        "Year": 2016,
+        "Month": 6,
+        "Profit": "695,8937",
+        "Predicted": "659,2863525"
+    },
+    {
+        "Year": 2016,
+        "Month": 7,
+        "Profit": 550726,
+        "Predicted": "440,7357667"
+    },
+    {
+        "Year": 2016,
+        "Month": 8,
+        "Profit": "419,7087",
+        "Predicted": "633,8732757"
+    },
+    {
+        "Year": 2016,
+        "Month": 9,
+        "Profit": "1396,4152",
+        "Predicted": "1407,13835"
+    },
+    {
+        "Year": 2016,
+        "Month": 10,
+        "Profit": "724,8259",
+        "Predicted": "639,1541573"
+    },
+    {
+        "Year": 2016,
+        "Month": 11,
+        "Profit": "1333,1372",
+        "Predicted": "1332,609007"
+    },
+    {
+        "Year": 2016,
+        "Month": 12,
+        "Profit": "1125,325",
+        "Predicted": "1129,451601"
+    },
+    {
+        "Year": 2017,
+        "Month": 1,
+        "Profit": "352,2581",
+        "Predicted": "356,1676447"
+    },
+    {
+        "Year": 2017,
+        "Month": 2,
+        "Profit": "197,3961",
+        "Predicted": "272,3313327"
+    },
+    {
+        "Year": 2017,
+        "Month": 3,
+        "Profit": "931,2906",
+        "Predicted": "718,4671605"
+    },
+    {
+        "Year": 2017,
+        "Month": 4,
+        "Profit": "486,0772",
+        "Predicted": "623,6165801"
+    },
+    {
+        "Year": 2017,
+        "Month": 5,
+        "Profit": "891,6919",
+        "Predicted": "776,3396784"
+    },
+    {
+        "Year": 2017,
+        "Month": 6,
+        "Profit": "589,92",
+        "Predicted": "768,6714701"
+    },
+    {
+        "Year": 2017,
+        "Month": 7,
+        "Profit": "753,0706",
+        "Predicted": "512,8629442"
+    },
+    {
+        "Year": 2017,
+        "Month": 8,
+        "Profit": "685,7036",
+        "Predicted": "736,2120832"
+    },
+    {
+        "Year": 2017,
+        "Month": 9,
+        "Profit": "1346,7972",
+        "Predicted": "1631,304792"
+    },
+    {
+        "Year": 2017,
+        "Month": 10,
+        "Profit": "932,3367",
+        "Predicted": "739,6416137"
+    },
+    {
+        "Year": 2017,
+        "Month": 11,
+        "Profit": "1259,481",
+        "Predicted": "1539,411595"
+    },
+    {
+        "Year": 2017,
+        "Month": 12,
+        "Profit": "1622,4319",
+        "Predicted": "1302,4892"
+    },
+    {
+        "Year": 2018,
+        "Month": 1,
+        "Profit": null,
+        "Predicted": "410,05"
+    },
+    {
+        "Year": 2018,
+        "Month": 2,
+        "Profit": null,
+        "Predicted": "313,02"
+    },
+    {
+        "Year": 2018,
+        "Month": 3,
+        "Profit": null,
+        "Predicted": "824,48"
+    },
+    {
+        "Year": 2018,
+        "Month": 4,
+        "Profit": null,
+        "Predicted": "714,52"
+    },
+    {
+        "Year": 2018,
+        "Month": 5,
+        "Profit": null,
+        "Predicted": "888,14"
+    },
+    {
+        "Year": 2018,
+        "Month": 6,
+        "Profit": null,
+        "Predicted": "878,06"
+    },
+    {
+        "Year": 2018,
+        "Month": 7,
+        "Profit": null,
+        "Predicted": "584,99"
+    },
+    {
+        "Year": 2018,
+        "Month": 8,
+        "Profit": null,
+        "Predicted": "838,55"
+    },
+    {
+        "Year": 2018,
+        "Month": 9,
+        "Profit": null,
+        "Predicted": "1855,47"
+    },
+    {
+        "Year": 2018,
+        "Month": 10,
+        "Profit": null,
+        "Predicted": "840,13"
+    },
+    {
+        "Year": 2018,
+        "Month": 11,
+        "Profit": null,
+        "Predicted": "1746,21"
+    },
+    {
+        "Year": 2018,
+        "Month": 12,
+        "Profit": null,
+        "Predicted": "1475,53"
+    }
+]

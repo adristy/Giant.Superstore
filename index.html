@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giant Superstore | Business Analysis</title>
+    <link rel="icon" href="/images/Logo RevoU.png" type="images/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<body>
+   <!-- NAVBAR -->
+   <nav>
+    <div class="wrapper">
+        <div class="logo"><img src="images/Kampus Merdeka.png" alt=""></div>
+        <div class="menu">
+            <ul>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#businessinsight">Business Insight</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Get Started -->
+<div class="container">
+    <div class="content">
+      <div class="judul">Superstore Giant :</div>
+      <div class="desc">US Ecommerce with multiple branches</div>
+      <a href="#aboutus" class="button">Read More</a>
+    </div>
+    <img src="images/home.jpeg" alt="Foto" class="image">   
+    </div>
+   
+    <main>
+        <section id="aboutus">
+            <div class="textabout">
+                <h3>Giant Superstore</h3>
+                <div class="konten-isi">
+                    <p> <b>Giant Superstore</b> is a retail chain offering a diverse range of products, 
+                        including office supplies, furniture, technology, and consumer goods. Sales 
+                        data analysis provides insights into product performance, regional sales, 
+                        customer segmentation, sales performance, and market trends. Leveraging the 
+                        rich insights from the dataset, Superstore Giant can optimize inventory, marketing 
+                        strategies, and strategic decision-making based on data, helping the company grow and 
+                        maintain its position as a leading retail destination.
+                    </p>
+                </div>
+                <div class="statistics">
+                <div>
+                    <p><i class="fa-solid fa-user"></i>790++</p>
+                    <small>Customers</small>
+                </div>
+                <div>
+                    <p><i class="fa-solid fa-cart-shopping"></i>3.7M++</p>
+                    <small>produts sold</small>
+                </div>
+                <div>
+                    <p><i class="fa-solid fa-chart-line"></i>110K++</p>
+                    <small>profit in USD</small>
+                </div>
+                </div>
+              </div>
+        </section>
+    </main>
+
+<!-- Products -->
+<main>
+    <section id="products">
+        <div class="products">
+            <h3>Products</h3>
+            <div class="containerbutton">
+                <!-- Button Filter -->
+                <div class="filter_button">
+                    <button class="active" data-name="all">Show All</button>
+                    <button data-name="furniture">Furniture</button>
+                    <button data-name="ofs">Office Supplies</button>
+                    <button data-name="tech">Technology</button>
+                </div>
+        
+                <!-- Image filtered -->
+                <div class="filterable_cards">
+                  <div class="card" data-name="furniture">
+                    <img src="images/products/furniture.bc.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Bookcases</h4>
+                      <p class="card_text">Stylish and modern book organizer</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="furniture">
+                    <img src="images/products/furniture.chairs.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Chairs</h4>
+                      <p class="card_text">Comfort and modern chairs.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="furniture">
+                    <img src="images/products/furniture.Furnishings.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Furnishings</h4>
+                      <p class="card_text">Elegant and practical furnishings.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="furniture">
+                    <img src="images/products/furniture.tables.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Tables</h4>
+                      <p class="card_text">Stylish and sturdy tables.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.Appliances.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Appliances</h4>
+                      <p class="card_text">Modern and efficient office appliances.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/arttt.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Art</h4>
+                      <p class="card_text">Inspiring and creative office art.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.binders.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Binders</h4>
+                      <p class="card_text">Durable and organized binders.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.envelopes.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Envelopes</h4>
+                      <p class="card_text">Secure and reliable envelopes.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.fasteners.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Fastners</h4>
+                      <p class="card_text">Strong and versatile fasteners.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.Labels.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Labels</h4>
+                      <p class="card_text">Clear and adhesive labels.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.paper.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Paper</h4>
+                      <p class="card_text">Made from wood pulp, a renewable resource..</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.storage.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Storage</h4>
+                      <p class="card_text">Store important documents and paperwork.</p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="ofs">
+                    <img src="images/products/office.Supplies.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Supplies</h4>
+                      <p class="card_text">Lorem ipsum is indeed the placeholder </p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="tech">
+                    <img src="images/products/tech.Accessories.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Accessories</h4>
+                      <p class="card_text">Lorem ipsum is indeed the placeholder </p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="tech">
+                    <img src="images/products/tech.Copiers.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Copiers</h4>
+                      <p class="card_text">Lorem ipsum is indeed the placeholder </p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="tech">
+                    <img src="images/products/tech.machines.jpeg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Machines</h4>
+                      <p class="card_text">Lorem ipsum is indeed the placeholder </p>
+                    </div>
+                  </div>
+                  <div class="card" data-name="tech">
+                    <img src="images/products/tech.phones.jpg" alt="">
+                    <div class="card_body">
+                      <h4 class="card_title">Phones</h4>
+                      <p class="card_text">Lorem ipsum is indeed the placeholder </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+    
+<!-- Dashboard -->
+    <section id="dashboard">
+        <div class="dashboard">
+            <h3>Dashboard</h3>
+            <nav id="nav-dashboard">
+                <header>
+                  <h2>Giant Superstore : Dashboard</h2>
+                  <form id="filterForm" class="filter-form">
+                    <!-- Year Dropdown Filter -->
+                    <select name="year" id="year">
+                        <option value="">Year</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                    </select>
+            
+                    <!-- Discount Type Dropdown Filter -->
+                    <select name="discountType" id="discountType">
+                        <option value="">Discount Type</option>
+                        <option value="No Discount">No Discount</option>
+                        <option value="Low Discount">Low Discount</option>
+                        <option value="Moderate Discount">Moderate Discount</option>
+                        <option value="Big Discount">Big Discount</option>
+                    </select>
+            
+                    <!-- Region Dropdown Filter -->
+                    <select name="region" id="region">
+                        <option value="">Region</option>
+                        <option value="West">West</option>
+                        <option value="East">East</option>
+                        <option value="Central">Central</option>
+                        <option value="South">South</option>
+                    </select>
+            
+                    <!-- Segment Dropdown Filter -->
+                    <select name="segment" id="segment">
+                        <option value="">Segment</option>
+                        <option value="Consumer">Consumer</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Home Office">Home Office</option>
+                    </select>
+                </form>
+                </header>     
+            </nav>
+            <main>
+        <section class="section-1">
+          <div class="card" data-name="net.profit">
+            <p><i class="fa-solid fa-money-bill-trend-up"></i><span id="netProfit">0.00</span></p>
+            <small>Net Profit</small>
+          </div>
+          <div class="card" data-name="revenue">
+            <p><i class="fa-solid fa-dollar-sign"></i><span id="revenue">0.00</span></p>
+            <small>Revenue</small>
+          </div>
+          <div class="card" data-name="clv">
+            <p><i class="fa-solid fa-address-card"></i>1.286.979.589</p>
+            <small>Cust Lifetime Value</small>
+          </div>
+          <div class="card" data-name="total.orders">
+            <p><i class="fa-solid fa-bag-shopping"></i><span id="order">0</span></p>
+            <small>Total Orders</small>
+          </div>
+        </section>
+        <section class="section-2">
+          <div class="chart">
+            <div id="ts-chart-container" class="chart-container">
+              <canvas id="timeSeriesChart"></canvas>
+            </div>
+          </div>
+          </section>
+        <section class="section-3">
+          <div class="chart">
+            <div id="chart-container" class="chart-container">
+              <canvas id="order-chart" width="400" height="400"></canvas>
+          </div>
+          </div>
+          <div class="chart">
+            <div id="pie-chart-container" class="chart-container">
+              <canvas id="pie-chart" width="400" height="400"></canvas>
+              <!-- Diagram batang akan ditampilkan di sini -->
+          </div>
+          </div>
+          <div class="chart">
+            <div id="newcust-chart-container" class="chart-container">
+              <canvas id="newcust-chart" width="400" height="400"></canvas>
+              <!-- Diagram batang akan ditampilkan di sini -->
+          </div>
+          </div>
+        </section>
+        <section class="section-4">
+          <div class="chart">
+            <div id="subcat-chart-container" class="chart-container">
+              <canvas id="subcatSalesProfit"></canvas>
+            </div>
+          </div>
+        </section>
+        <section class="section-5">
+          <div class="table-container">
+              <h2>Top 15 Profitable Orders</h2>
+              <table id="dataTable"></table>
+          </div>
+      </section>      
+      </main>
+    </section>
+
+<!-- Business Insight -->
+<main>
+    <section id="businessinsight">
+        <div class="businessinsight">
+            <h3>Business Insight</h3>
+            <div class="containerbutton">
+              <!-- Button Filter -->
+              <div class="region_button">
+                  <button class="active" data-name="general">Overview</button>
+                  <button data-name="west">West</button>
+                  <button data-name="east">East</button>
+                  <button data-name="central">Central</button>
+                  <button data-name="south">South</button>
+              </div>
+              <!-- Insight -->
+              <div class="insight">
+                <div class="card" data-name="general">
+                  <h4>Overview Insight</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h5>Recommendation</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="card hide" data-name="west">
+                  <h4>West Region Insight</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h5>Recommendation</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="card hide" data-name="east">
+                  <h4>East Region Insight</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h5>Recommendation</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="card hide" data-name="central">
+                  <h4>Central Region Insight</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h5>Recommendation</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="card hide" data-name="south">
+                  <h4>South Region Insight</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h5>Recommendation</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+                      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
