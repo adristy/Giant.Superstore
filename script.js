@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const netProfitElement = document.querySelector('[data-name="net.profit"] span');
     const revenueElement = document.querySelector('[data-name="revenue"] span');
     const ordersElement = document.querySelector('[data-name="total.orders"] span');
+    const clvElement = document.querySelector('[data-name="clv"] span');
+
+    let filteredData = []; // Variable to store filtered data from dataset.json
+    let filteredProfit = []; // Variable to store filtered data from DataProfit.json
+    let currentPage = 1;
+    const recordsPerPage = 20;
 
     // Event listener for dropdown filter changes
     filterForm.querySelectorAll('select').forEach(select => {
@@ -61,56 +67,131 @@ document.addEventListener("DOMContentLoaded", function() {
         const region = document.getElementById('region').value;
         const segment = document.getElementById('segment').value;
 
-        fetch('dataset.json')
-            .then(response => response.json())
-            .then(data => {
-                const filteredData = data.filter(item => {
-                    return (year === '' || item.Year.toString() === year) &&
-                           (discountType === '' || item.DiscountType === discountType) &&
-                           (region === '' || item.Region.toLowerCase().includes(region.toLowerCase())) &&
-                           (segment === '' || item.Segment.toLowerCase().includes(segment.toLowerCase()));
-                });
+    // Fetch dataset.json
+    fetch('dataset.json')
+    .then(response => response.json())
+    .then(data => {
+        filteredData = data.filter(item => {
+            return (year === '' || item.Year.toString() === year) &&
+                (discountType === '' || item.DiscountType === discountType) &&
+                (region === '' || item.Region.toLowerCase().includes(region.toLowerCase())) &&
+                (segment === '' || item.Segment.toLowerCase().includes(segment.toLowerCase()));
+        });
 
-                // Sort the filtered data by Profit in descending order and get the top 10
-                const top10Data = filteredData.sort((a, b) => b.Profit - a.Profit).slice(0, 15);
+        renderBarChart(filteredData);
+        updateNetProfit(filteredData);
+        updateRevenue(filteredData);
+        updateOrders(filteredData);
+        renderPieChart(filteredData);
+        renderSubCatChart(filteredData);
+        updateCLV(filteredData);
+    })
+    .catch(error => console.error('Error fetching dataset.json:', error));
 
-                renderTable(top10Data);
-                renderBarChart(filteredData);
-                updateNetProfit(filteredData);
-                updateRevenue(filteredData);
-                updateOrders(filteredData);
-                renderPieChart(filteredData);
-                renderSubCatChart(filteredData);
-            })
-            .catch(error => console.error('Error fetching data:', error));
+    fetch('DataProfit.json')
+    .then(response1 => response1.json())
+    .then(data => {
+        filteredProfit = data.filter(item => {
+            return (year === '' || item.Year.toString() === year) &&
+                   (discountType === '' || item.DiscountType === discountType) &&
+                   (region === '' || item.Region.toLowerCase().includes(region.toLowerCase())) &&
+                   (segment === '' || item.Segment.toLowerCase().includes(segment.toLowerCase()));
+        });
+
+        // Sort filteredProfit by Total Profit in descending order
+        filteredProfit.sort((a, b) => parseFloat(b['Total Profit']) - parseFloat(a['Total Profit']));
+
+        // Take the top 200 records
+        filteredProfit = filteredProfit.slice(0, 200);
+
+        renderTable(currentPage);
+    })
+    .catch(error => console.error('Error fetching profit data:', error));
+    
+}
+
+function renderTable(page) {
+const table = document.getElementById('dataTable');
+table.innerHTML = ''; // Clear existing content
+
+const columns = ['No', 'Product ID', 'Category', 'Sub-Category', 'Product Name', 'Total Profit'];
+
+// Calculate pagination variables
+const startIndex = (page - 1) * recordsPerPage;
+const endIndex = startIndex + recordsPerPage;
+const paginatedData = filteredProfit.slice(startIndex, endIndex);
+
+// Create table header
+const headerRow = document.createElement('tr');
+columns.forEach(headerText => {
+    const th = document.createElement('th');
+    th.textContent = headerText;
+    headerRow.appendChild(th);
+});
+table.appendChild(headerRow);
+
+// Create table rows
+paginatedData.forEach((item, index) => {
+    const row = document.createElement('tr');
+    columns.forEach((header, columnIndex) => {
+        const cell = document.createElement('td');
+        if (header === 'No') {
+            cell.textContent = startIndex + index + 1;
+        } else {
+            cell.textContent = item[header.replace(' ', '')]; // Match object keys to column names
+        }
+        row.appendChild(cell);
+    });
+    table.appendChild(row);
+});
+
+// Create pagination controls
+const paginationContainer = document.getElementById('pagination');
+paginationContainer.innerHTML = '';
+
+const totalPages = Math.ceil(filteredProfit.length / recordsPerPage);
+const maxVisibleButtons = 5; // Maximum number of pagination buttons to show
+const middlePage = Math.ceil(maxVisibleButtons / 2);
+let startPage = Math.max(1, currentPage - middlePage + 1);
+let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+
+if (endPage - startPage + 1 < maxVisibleButtons) {
+    startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+}
+
+// Ensure startPage is valid
+startPage = Math.max(1, startPage);
+
+for (let i = startPage; i <= endPage; i++) {
+    const paginationButton = document.createElement('button');
+    paginationButton.textContent = i;
+    paginationButton.classList.add('pagination-button');
+
+    if (i === currentPage) {
+        paginationButton.classList.add('active');
     }
 
-    function renderTable(data) {
-        const table = document.getElementById('dataTable');
-        table.innerHTML = ''; // Clear existing content
+    paginationButton.addEventListener('click', () => {
+        currentPage = i;
+        renderTable(currentPage);
+        updatePaginationButtons();
+    });
 
-        const columns = ['Order ID', 'Customer Name', 'Segment', 'Region','Country', 'Category', 'Sub-Category', 'Sales', 'Profit'];
-        
-        // Create table header
-        const headerRow = document.createElement('tr');
-        columns.forEach(headerText => {
-            const th = document.createElement('th');
-            th.textContent = headerText;
-            headerRow.appendChild(th);
-        });
-        table.appendChild(headerRow);
+    paginationContainer.appendChild(paginationButton);
+}
 
-        // Create table rows
-        data.forEach(item => {
-            const row = document.createElement('tr');
-            columns.forEach(header => {
-                const cell = document.createElement('td');
-                cell.textContent = item[header.replace(' ', '')]; // Match object keys to column names
-                row.appendChild(cell);
-            });
-            table.appendChild(row);
-        });
+updatePaginationButtons();
+}
+
+function updatePaginationButtons() {
+const paginationButtons = document.querySelectorAll('.pagination-button');
+paginationButtons.forEach(button => {
+    button.classList.remove('active');
+    if (parseInt(button.textContent) === currentPage) {
+        button.classList.add('active');
     }
+});
+}
 
     // Function to update net profit
     function updateNetProfit(data) {
@@ -118,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return acc + item.Profit;
         }, 0);
         const roundedProfit = Math.round(totalProfit);
-        netProfitElement.textContent = roundedProfit.toLocaleString('en-US');
+        netProfitElement.textContent = roundedProfit.toLocaleString('de-DE');
     }
 
     // Function to update revenue
@@ -126,8 +207,24 @@ document.addEventListener("DOMContentLoaded", function() {
         const totalRevenue = data.reduce((acc, item) => {
             return acc + item['Sales'];
         }, 0);
-        revenueElement.textContent = totalRevenue.toLocaleString('en-US', {minimumFractionDigits: 2});
+        revenueElement.textContent = totalRevenue.toLocaleString('de-DE', {minimumFractionDigits: 2});
     }
+
+    // Function to update CLV
+    function updateCLV(data) {
+        const countOrderID = data.length;
+    
+        const avgSalesClean = data.reduce((acc, item) => acc + item['Sales'], 0) / data.length;
+    
+        const orderDates = data.map(item => new Date(item['OrderDate']));
+        const maxOrderDate = new Date(Math.max(...orderDates));
+        const minOrderDate = new Date(Math.min(...orderDates));
+        const dateDiff = Math.floor((maxOrderDate - minOrderDate) / (1000 * 60 * 60 * 24));
+    
+        const clv = countOrderID * avgSalesClean * dateDiff;
+        clvElement.textContent = clv.toLocaleString('de-DE', {maximumFractionDigits: 0});
+    }
+    
 
     // Function update total orders
     function updateOrders(data) {
@@ -654,8 +751,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 }
 
-//  // TIME SERIES CHART
-
         
     fetchData();
     
@@ -792,3 +887,28 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+// Smooth Transition
+document.addEventListener('DOMContentLoaded', function() {
+    // Mengambil semua tautan navbar
+    const navLinks = document.querySelectorAll('.navbar a');
+  
+    // Menambahkan event listener untuk setiap tautan
+    navLinks.forEach(function(navLink) {
+      navLink.addEventListener('click', function(e) {
+        e.preventDefault();
+  
+        // Mengambil target bagian dari atribut href
+        const targetId = this.getAttribute('href').substring(1);
+  
+        // Mengambil elemen target
+        const targetSection = document.getElementById(targetId);
+  
+        // Scroll ke bagian
+        targetSection.scrollIntoView({
+          behavior: 'smooth' // Efek animasi smooth
+        });
+      });
+    });
+  });
+  
